@@ -133,4 +133,29 @@ public class GarageTest {
 
 		return count;
 	}
+
+	@Test 
+	public void voitureDoitAvoirImmatriculation() {
+		try {
+			String immat = null;
+			new Voiture(immat);
+			// Si j'arrive ici, c'est pas normal, le test doit échouer
+			fail("On aurait du avoir une exception !"); // On force l'échec du test
+		} catch (IllegalArgumentException e) {
+			// Si j'arrive ici, c'est normal, c'est ce qu'on souhaite
+		}
+	}
+
+	@Test 
+	public void garageDoitAvoirNom() {
+		try {
+			Garage myGarage = new Garage("Castres");
+			String newGarage = null;
+			myGarage.setName(newGarage);
+			// Si j'arrive ici, c'est pas normal, le test doit échouer
+			fail("On aurait du avoir une exception !"); // On force l'échec du test
+		} catch (IllegalArgumentException e) {
+			// Si j'arrive ici, c'est normal, c'est ce qu'on souhaite
+		}
+	}	
 }
